@@ -7,7 +7,7 @@ namespace TaxpayerMocking
         static void Main(string[] args)
         {
 
-            SetupDatabase.Initialize(20);
+            SetupDatabase.Initialize(5);
             var taxpayers = SetupDatabase.GetTaxpayers();
 
             var table = CreateTable();
