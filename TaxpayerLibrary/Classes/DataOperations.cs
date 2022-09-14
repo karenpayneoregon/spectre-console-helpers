@@ -85,6 +85,12 @@ namespace TaxpayerLibrary.Classes
             }
             
         }
+
+        public static async Task TestConnection()
+        {
+            await using var cn = new SqlConnection(ConfigurationHelper.ConnectionString());
+            await cn.OpenAsync();
+        }
         /// <summary>
         /// Same as above but using .NET Framework code style e.g.
         /// The two variables 'cn' and 'cmd' have {} while in the above

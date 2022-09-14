@@ -18,14 +18,15 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{167F4688-6F57-4240-8C85-767C1932D66A}"
 	ProjectSection(SolutionItems) = preProject
 		databaseScript.sql = databaseScript.sql
+		InteractingWithData.md = InteractingWithData.md
 		readme.md = readme.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColdFusionLibrary", "ColdFusionLibrary\ColdFusionLibrary.csproj", "{4A93D3F8-2A63-4B45-8603-6EA8A302D00B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColdFusionLibrary", "ColdFusionLibrary\ColdFusionLibrary.csproj", "{4A93D3F8-2A63-4B45-8603-6EA8A302D00B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Oracle - Cold Fusion", "Oracle - Cold Fusion", "{A5C140B0-3EBF-4D75-A9BC-8BC1F1B40B8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxpayerMocking", "TaxpayerMocking\TaxpayerMocking.csproj", "{CDCC9FAC-12E0-4F8A-9DA3-3DBB36A2CA39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxpayerMocking", "TaxpayerMocking\TaxpayerMocking.csproj", "{CDCC9FAC-12E0-4F8A-9DA3-3DBB36A2CA39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
