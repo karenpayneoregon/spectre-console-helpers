@@ -9,6 +9,7 @@ public class Taxpayer
     public string FullName => $"{FirstName} {LastName}";
     // ReSharper disable once InconsistentNaming
     public string SSN { get; set; }
+    public string SocialSecurityNumber => SSN.Insert(5, "-").Insert(3, "-");
     public string Pin { get; set; }
     public DateOnly? StartDate { get; set; }
 

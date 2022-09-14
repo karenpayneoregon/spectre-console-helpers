@@ -12,7 +12,9 @@ namespace TaxpayerLibraryEntityVersion.Models
         public string LastName { get; set; }
         public string FullName => $"{FirstName} {LastName}";
         public string SSN { get; set; }
+        public string SocialSecurityNumber => SSN.Insert(5, "-").Insert(3, "-");
         public string Pin { get; set; }
         public DateTime? StartDate { get; set; }
+        public override string ToString() => $"{FirstName} {LastName}";
     }
 }

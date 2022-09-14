@@ -16,6 +16,16 @@ internal partial class Program
     {
         await Task.Delay(0);
 
+        int id = 1;
+        var (taxpayer, found) = await DataOperations.GetTaxpayer(id);
+        if (found)
+        {
+            Console.WriteLine(taxpayer.FullName);
+        }
+        else
+        {
+            Console.WriteLine("Not found");
+        }
         Console.ReadLine();
     }
 
