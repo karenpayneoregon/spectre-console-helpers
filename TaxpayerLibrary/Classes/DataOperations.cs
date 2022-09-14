@@ -86,11 +86,7 @@ namespace TaxpayerLibrary.Classes
             
         }
 
-        public static async Task TestConnection()
-        {
-            await using var cn = new SqlConnection(ConfigurationHelper.ConnectionString());
-            await cn.OpenAsync();
-        }
+
         /// <summary>
         /// Same as above but using .NET Framework code style e.g.
         /// The two variables 'cn' and 'cmd' have {} while in the above
@@ -168,10 +164,10 @@ SELECT CAST(scope_identity() AS int);
         public static async Task<(Taxpayer taxpayer, bool)> EditTaxpayer()
         {
             int id = 1;
-            var newStartDate = "2022-09-14";//  new DateOnly(Now.Year, Now.Month, Now.Day);
+            var newStartDate = "2022-09-14";
             RandomDateTime date = new RandomDateTime();
             var value = date.DateValue(date.Next());
-            //.ToDateTime(new TimeOnly(0,0,0))
+            
             var (taxpayer, found) = await GetTaxpayer(id);
             if (found)
             {
