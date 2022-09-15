@@ -17,7 +17,8 @@ internal partial class Program
         await Task.Delay(0);
 
         //EF.Taxpayer taxpayer = await AddTaxpayerEntityVersion();
-        await EditTaxpayerDataProvider();
+        //await EditTaxpayerDataProvider();
+        await EntityDataOperations.GetOriginalValuesAfterEditingVersion2();
         Console.ReadLine();
     }
 

@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace ConsoleApp1.Classes;
 
-internal class Operations
+internal class FileOperations
 {
     public static string TaxpayerFileName = "Taxpayers.json";
     public static string CategoryFileName = "Categories.json";
