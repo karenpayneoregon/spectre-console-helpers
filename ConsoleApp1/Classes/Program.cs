@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using ConsoleApp1.Models;
 using Spectre.Console;
 using static ConsoleHelperLibrary.Classes.WindowUtility;
 
@@ -13,6 +14,7 @@ namespace ConsoleApp1
             Console.Title = "Code sample: Getting to know Visual Studio and C#";
             SetConsoleWindowPosition(AnchorWindow.Fill);
         }
+
 
 
     }

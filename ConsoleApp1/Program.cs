@@ -1,4 +1,5 @@
-﻿using ConsoleApp1.Classes;
+﻿using System.Security.Cryptography.X509Certificates;
+using ConsoleApp1.Classes;
 using ConsoleApp1.Models;
 using Spectre.Console;
 
@@ -6,7 +7,7 @@ namespace ConsoleApp1
 {
     internal partial class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             //ReadTaxpayersLastNameStartsWithRight();
             GroupByExample();
@@ -31,8 +32,7 @@ namespace ConsoleApp1
         {
             AnsiConsole.MarkupLine($"[b]Running[/] [cyan]{nameof(ReadTaxpayersSorted)}[/]");
 
-            var taxpayers = 
-                Operations
+            var taxpayers = Operations
                     .ReadTaxpayers()
                     .OrderBy(x => x.LastName);
 
@@ -48,12 +48,12 @@ namespace ConsoleApp1
 
             var startsWith = "h";
 
-            var taxpayers = 
-                Operations
+            var taxpayers = Operations
                     .ReadTaxpayers()
                     .Where(x => x.LastName.StartsWith(startsWith));
 
 
+            // ReSharper disable once PossibleMultipleEnumeration
             if (taxpayers.Any())
             {
                 foreach (var taxpayer in taxpayers)
@@ -72,13 +72,13 @@ namespace ConsoleApp1
 
             var startsWith = "h";
 
-            var taxpayers =
-                Operations
+            var taxpayers = Operations
                     .ReadTaxpayers()
                     .Where(x => x.LastName.StartsWith(startsWith, 
                         StringComparison.OrdinalIgnoreCase));
 
 
+            // ReSharper disable once PossibleMultipleEnumeration
             if (taxpayers.Any())
             {
                 
@@ -101,27 +101,32 @@ namespace ConsoleApp1
         private static void GroupByExample()
         {
             AnsiConsole.MarkupLine($"[b]Running[/] [cyan]{nameof(GroupByExample)}[/]");
+            Console.WriteLine();
 
             var categories = Operations.ReadCategories();
 
-            var taxpayers =
-                Operations
+            IOrderedEnumerable<IGrouping<int, Taxpayer>> taxpayers = Operations
                     .ReadTaxpayers()
-                    .OrderBy(x => x.LastName)
-                    .GroupBy(x => x.CategoryId)
-                    .OrderBy(x => x.Key);
+                    .OrderBy(tp => tp.LastName)
+                    .GroupBy(tp => tp.CategoryId)
+                    .OrderBy(iGroup => iGroup.FirstOrDefault()?.Category.Description)
+                    .ThenBy(iGroup => iGroup.FirstOrDefault()?.LastName);
 
+            
             /*
              * In general, var would be best rather than IGrouping<int, Taxpayer> but
              * for learning purposes let's show the type.
              */
             foreach (IGrouping<int, Taxpayer> grouped in taxpayers)
             {
-                Console.WriteLine($"{categories.FirstOrDefault(x => x.CategoryId == grouped.Key)!.Description}");
+
+                AnsiConsole.MarkupLine(
+                    $"[yellow]{categories.FirstOrDefault(x => x.CategoryId == grouped.Key)!.Description}[/]");
 
                 foreach (Taxpayer taxpayer in grouped)
                 {
-                    Console.WriteLine($"\t{taxpayer.FullName}");
+                    Console.WriteLine($"\t{taxpayer.FullName,-20}{taxpayer.StartDate.Value,-12:MM/dd/yyyy}" + 
+                                      $"{taxpayer.SocialSecurityNumber}");
                 }
             }
         }

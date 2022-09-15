@@ -62,3 +62,13 @@ WHERE Identifier NOT IN (SELECT CustomerIdentifier FROM dbo.Customers)
 ORDER BY Identifier
 OPTION (MAXRECURSION 0);
 ```
+
+
+For generating json [FOR JSON AUTO](https://docs.microsoft.com/en-us/sql/relational-databases/json/format-json-output-automatically-with-auto-mode-sql-server?view=sql-server-ver16)
+
+```sql
+SELECT CategoryId
+      ,Description
+  FROM [OED.Lessons].dbo.Categories
+  FOR JSON AUTO
+```
