@@ -1,0 +1,472 @@
+/* 
+  FullName and SocialSecurityNumber would be excluded for a real app 
+  properties starting wit $ are because of self-referencing 
+*/
+[
+  {
+    "$id": "1",
+    "Id": 1,
+    "FirstName": "Eddie",
+    "LastName": "Hoeger",
+    "FullName": "Eddie Hoeger",
+    "SSN": "127978479",
+    "SocialSecurityNumber": "127-97-8479",
+    "Pin": "6674",
+    "StartDate": "2022-06-02T00:00:00",
+    "CategoryId": 3,
+    "Category": {
+      "$id": "2",
+      "CategoryId": 3,
+      "Description": "Rejected",
+      "Taxpayers": [
+        {
+          "$ref": "1"
+        },
+        {
+          "$id": "3",
+          "Id": 9,
+          "FirstName": "Hubert",
+          "LastName": "McGlynn",
+          "FullName": "Hubert McGlynn",
+          "SSN": "339186702",
+          "SocialSecurityNumber": "339-18-6702",
+          "Pin": "2265",
+          "StartDate": "2021-08-01T00:00:00",
+          "CategoryId": 3,
+          "Category": {
+            "$ref": "2"
+          }
+        },
+        {
+          "$id": "4",
+          "Id": 11,
+          "FirstName": "Melody",
+          "LastName": "Becker",
+          "FullName": "Melody Becker",
+          "SSN": "533831900",
+          "SocialSecurityNumber": "533-83-1900",
+          "Pin": "0975",
+          "StartDate": "2021-10-27T00:00:00",
+          "CategoryId": 3,
+          "Category": {
+            "$ref": "2"
+          }
+        },
+        {
+          "$id": "5",
+          "Id": 14,
+          "FirstName": "Emmett",
+          "LastName": "Hane",
+          "FullName": "Emmett Hane",
+          "SSN": "323689360",
+          "SocialSecurityNumber": "323-68-9360",
+          "Pin": "9417",
+          "StartDate": "2022-04-29T00:00:00",
+          "CategoryId": 3,
+          "Category": {
+            "$ref": "2"
+          }
+        },
+        {
+          "$id": "6",
+          "Id": 17,
+          "FirstName": "Herbert",
+          "LastName": "Koss",
+          "FullName": "Herbert Koss",
+          "SSN": "661047079",
+          "SocialSecurityNumber": "661-04-7079",
+          "Pin": "3276",
+          "StartDate": "2022-05-20T00:00:00",
+          "CategoryId": 3,
+          "Category": {
+            "$ref": "2"
+          }
+        },
+        {
+          "$id": "7",
+          "Id": 20,
+          "FirstName": "Marta",
+          "LastName": "Mante",
+          "FullName": "Marta Mante",
+          "SSN": "646073461",
+          "SocialSecurityNumber": "646-07-3461",
+          "Pin": "8476",
+          "StartDate": "2022-08-28T00:00:00",
+          "CategoryId": 3,
+          "Category": {
+            "$ref": "2"
+          }
+        },
+        {
+          "$id": "8",
+          "Id": 21,
+          "FirstName": "Judy",
+          "LastName": "Kiehn",
+          "FullName": "Judy Kiehn",
+          "SSN": "682526491",
+          "SocialSecurityNumber": "682-52-6491",
+          "Pin": "8777",
+          "StartDate": "2021-11-07T00:00:00",
+          "CategoryId": 3,
+          "Category": {
+            "$ref": "2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "$id": "9",
+    "Id": 2,
+    "FirstName": "Andres",
+    "LastName": "Hilpert",
+    "FullName": "Andres Hilpert",
+    "SSN": "395703435",
+    "SocialSecurityNumber": "395-70-3435",
+    "Pin": "6710",
+    "StartDate": "2022-03-31T00:00:00",
+    "CategoryId": 1,
+    "Category": {
+      "$id": "10",
+      "CategoryId": 1,
+      "Description": "Needs review",
+      "Taxpayers": [
+        {
+          "$ref": "9"
+        },
+        {
+          "$id": "11",
+          "Id": 3,
+          "FirstName": "Ana",
+          "LastName": "Rice",
+          "FullName": "Ana Rice",
+          "SSN": "740053630",
+          "SocialSecurityNumber": "740-05-3630",
+          "Pin": "8675",
+          "StartDate": "2021-12-06T00:00:00",
+          "CategoryId": 1,
+          "Category": {
+            "$ref": "10"
+          }
+        },
+        {
+          "$id": "12",
+          "Id": 5,
+          "FirstName": "Shirley",
+          "LastName": "Will",
+          "FullName": "Shirley Will",
+          "SSN": "763796364",
+          "SocialSecurityNumber": "763-79-6364",
+          "Pin": "8716",
+          "StartDate": "2021-09-26T00:00:00",
+          "CategoryId": 1,
+          "Category": {
+            "$ref": "10"
+          }
+        },
+        {
+          "$id": "13",
+          "Id": 6,
+          "FirstName": "Rex",
+          "LastName": "Robel",
+          "FullName": "Rex Robel",
+          "SSN": "268014468",
+          "SocialSecurityNumber": "268-01-4468",
+          "Pin": "0631",
+          "StartDate": "2022-02-17T00:00:00",
+          "CategoryId": 1,
+          "Category": {
+            "$ref": "10"
+          }
+        },
+        {
+          "$id": "14",
+          "Id": 7,
+          "FirstName": "Elvira",
+          "LastName": "Hansen",
+          "FullName": "Elvira Hansen",
+          "SSN": "141470829",
+          "SocialSecurityNumber": "141-47-0829",
+          "Pin": "2945",
+          "StartDate": "2022-05-27T00:00:00",
+          "CategoryId": 1,
+          "Category": {
+            "$ref": "10"
+          }
+        },
+        {
+          "$id": "15",
+          "Id": 8,
+          "FirstName": "Josephine",
+          "LastName": "Parisian",
+          "FullName": "Josephine Parisian",
+          "SSN": "686293929",
+          "SocialSecurityNumber": "686-29-3929",
+          "Pin": "2131",
+          "StartDate": "2021-05-06T00:00:00",
+          "CategoryId": 1,
+          "Category": {
+            "$ref": "10"
+          }
+        },
+        {
+          "$id": "16",
+          "Id": 10,
+          "FirstName": "Vincent",
+          "LastName": "Marquardt",
+          "FullName": "Vincent Marquardt",
+          "SSN": "634366338",
+          "SocialSecurityNumber": "634-36-6338",
+          "Pin": "5134",
+          "StartDate": "2021-06-13T00:00:00",
+          "CategoryId": 1,
+          "Category": {
+            "$ref": "10"
+          }
+        },
+        {
+          "$id": "17",
+          "Id": 16,
+          "FirstName": "Dana",
+          "LastName": "Smitham",
+          "FullName": "Dana Smitham",
+          "SSN": "124127799",
+          "SocialSecurityNumber": "124-12-7799",
+          "Pin": "8956",
+          "StartDate": "2021-01-12T00:00:00",
+          "CategoryId": 1,
+          "Category": {
+            "$ref": "10"
+          }
+        },
+        {
+          "$id": "18",
+          "Id": 19,
+          "FirstName": "Raquel",
+          "LastName": "Douglas",
+          "FullName": "Raquel Douglas",
+          "SSN": "118255828",
+          "SocialSecurityNumber": "118-25-5828",
+          "Pin": "8142",
+          "StartDate": "2022-04-02T00:00:00",
+          "CategoryId": 1,
+          "Category": {
+            "$ref": "10"
+          }
+        },
+        {
+          "$id": "19",
+          "Id": 22,
+          "FirstName": "Cristina",
+          "LastName": "Ernser",
+          "FullName": "Cristina Ernser",
+          "SSN": "073004046",
+          "SocialSecurityNumber": "073-00-4046",
+          "Pin": "0369",
+          "StartDate": "2021-05-19T00:00:00",
+          "CategoryId": 1,
+          "Category": {
+            "$ref": "10"
+          }
+        },
+        {
+          "$id": "20",
+          "Id": 23,
+          "FirstName": "Kent",
+          "LastName": "Littel",
+          "FullName": "Kent Littel",
+          "SSN": "614756421",
+          "SocialSecurityNumber": "614-75-6421",
+          "Pin": "1895",
+          "StartDate": "2021-12-31T00:00:00",
+          "CategoryId": 1,
+          "Category": {
+            "$ref": "10"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "$ref": "11"
+  },
+  {
+    "$id": "21",
+    "Id": 4,
+    "FirstName": "Marianne",
+    "LastName": "Lowe",
+    "FullName": "Marianne Lowe",
+    "SSN": "616184622",
+    "SocialSecurityNumber": "616-18-4622",
+    "Pin": "4803",
+    "StartDate": "2022-04-19T00:00:00",
+    "CategoryId": 4,
+    "Category": {
+      "$id": "22",
+      "CategoryId": 4,
+      "Description": "Complete",
+      "Taxpayers": [
+        {
+          "$ref": "21"
+        },
+        {
+          "$id": "23",
+          "Id": 24,
+          "FirstName": "Beatrice",
+          "LastName": "Mohr",
+          "FullName": "Beatrice Mohr",
+          "SSN": "214978214",
+          "SocialSecurityNumber": "214-97-8214",
+          "Pin": "8498",
+          "StartDate": "2022-08-03T00:00:00",
+          "CategoryId": 4,
+          "Category": {
+            "$ref": "22"
+          }
+        },
+        {
+          "$id": "24",
+          "Id": 25,
+          "FirstName": "Jenny",
+          "LastName": "Hammes",
+          "FullName": "Jenny Hammes",
+          "SSN": "927540759",
+          "SocialSecurityNumber": "927-54-0759",
+          "Pin": "3546",
+          "StartDate": "2021-07-03T00:00:00",
+          "CategoryId": 4,
+          "Category": {
+            "$ref": "22"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "$ref": "12"
+  },
+  {
+    "$ref": "13"
+  },
+  {
+    "$ref": "14"
+  },
+  {
+    "$ref": "15"
+  },
+  {
+    "$ref": "3"
+  },
+  {
+    "$ref": "16"
+  },
+  {
+    "$ref": "4"
+  },
+  {
+    "$id": "25",
+    "Id": 12,
+    "FirstName": "Jody",
+    "LastName": "Stamm",
+    "FullName": "Jody Stamm",
+    "SSN": "962395280",
+    "SocialSecurityNumber": "962-39-5280",
+    "Pin": "3569",
+    "StartDate": "2022-09-09T00:00:00",
+    "CategoryId": 2,
+    "Category": {
+      "$id": "26",
+      "CategoryId": 2,
+      "Description": "Incomplete",
+      "Taxpayers": [
+        {
+          "$ref": "25"
+        },
+        {
+          "$id": "27",
+          "Id": 13,
+          "FirstName": "Louise",
+          "LastName": "Murphy",
+          "FullName": "Louise Murphy",
+          "SSN": "666497143",
+          "SocialSecurityNumber": "666-49-7143",
+          "Pin": "8425",
+          "StartDate": "2022-07-24T00:00:00",
+          "CategoryId": 2,
+          "Category": {
+            "$ref": "26"
+          }
+        },
+        {
+          "$id": "28",
+          "Id": 15,
+          "FirstName": "Dwayne",
+          "LastName": "Anderson",
+          "FullName": "Dwayne Anderson",
+          "SSN": "352439320",
+          "SocialSecurityNumber": "352-43-9320",
+          "Pin": "7716",
+          "StartDate": "2021-11-07T00:00:00",
+          "CategoryId": 2,
+          "Category": {
+            "$ref": "26"
+          }
+        },
+        {
+          "$id": "29",
+          "Id": 18,
+          "FirstName": "Ross",
+          "LastName": "Roob",
+          "FullName": "Ross Roob",
+          "SSN": "439588079",
+          "SocialSecurityNumber": "439-58-8079",
+          "Pin": "4193",
+          "StartDate": "2022-03-31T00:00:00",
+          "CategoryId": 2,
+          "Category": {
+            "$ref": "26"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "$ref": "27"
+  },
+  {
+    "$ref": "5"
+  },
+  {
+    "$ref": "28"
+  },
+  {
+    "$ref": "17"
+  },
+  {
+    "$ref": "6"
+  },
+  {
+    "$ref": "29"
+  },
+  {
+    "$ref": "18"
+  },
+  {
+    "$ref": "7"
+  },
+  {
+    "$ref": "8"
+  },
+  {
+    "$ref": "19"
+  },
+  {
+    "$ref": "20"
+  },
+  {
+    "$ref": "23"
+  },
+  {
+    "$ref": "24"
+  }
+]

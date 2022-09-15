@@ -1,0 +1,18 @@
+﻿[
+  {
+    "CategoryId": 1,
+    "Description": "Needs review"
+  },
+  {
+    "CategoryId": 2,
+    "Description": "Incomplete"
+  },
+  {
+    "CategoryId": 3,
+    "Description": "Rejected"
+  },
+  {
+    "CategoryId": 4,
+    "Description": "Complete"
+  }
+]

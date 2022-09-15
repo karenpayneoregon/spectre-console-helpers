@@ -1,8 +1,6 @@
-﻿
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using TaxpayerLibraryEntityVersion.Models;
 using TaxpayerMocking.Classes;
-using TaxpayerMocking.Models;
 
 namespace TaxpayerMocking
 {
@@ -11,10 +9,10 @@ namespace TaxpayerMocking
         static void Main(string[] args)
         {
 
-            SetupDatabase.Initialize(2);
+            SetupDatabase.Initialize(25);
             List<Taxpayer> taxpayerList = SetupDatabase.GetTaxpayers();
 
-            //JsonExample(taxpayerList);
+            JsonExample(taxpayerList);
 
             var table = CreateTable();
 
