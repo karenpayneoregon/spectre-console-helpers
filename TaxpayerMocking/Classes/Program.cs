@@ -23,6 +23,7 @@ namespace TaxpayerMocking
                 .AddColumn("[b]SSN[/]")
                 .AddColumn("[b]PIN[/]")
                 .AddColumn("[b]Start date[/]")
+                .AddColumn("[b]Category[/]")
                 .Alignment(Justify.Center)
                 .Title("[white on blue]Taxpayers[/]");
         }

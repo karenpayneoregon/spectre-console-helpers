@@ -22,6 +22,8 @@ public partial class OedContext : DbContext
     }
 
     public virtual DbSet<Taxpayer> Taxpayer { get; set; }
+    public virtual DbSet<Category> Categories { get; set; }
+
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

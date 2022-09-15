@@ -15,7 +15,7 @@ internal class SetupDatabase
     public static List<Taxpayer> GetTaxpayers()
     {
         using var context = new OedContext();
-        return context.Taxpayer.ToList();
+        return context.Taxpayer.Include(tp => tp.Category).ToList();
     }
 
     /// <summary>
@@ -28,6 +28,13 @@ internal class SetupDatabase
         CleanDatabase(context);
         PopulateData(context, count);
     }
+
+    /// <summary>
+    /// Remove database if exists
+    /// Create new database
+    ///   * Since there is a property named Id EF will make this a primary auto-incrementing column
+    /// </summary>
+    /// <param name="context"></param>
     public static void CleanDatabase(DbContext context)
     {
         context.Database.EnsureDeleted();
@@ -35,6 +42,15 @@ internal class SetupDatabase
     }
     public static void PopulateData(DbContext context, int count = 10)
     {
+        /*
+         * Add child table first as taxpayers is dependent on categories
+         */
+        context.AddRange(Categories());
+        context.SaveChanges();
+
+        /*
+         * Add taxpayers in tangent with foreign keys to categories
+         */
         context.AddRange(Taxpayers(count));
         context.SaveChanges();
     }
@@ -62,12 +78,29 @@ internal class SetupDatabase
             .RuleFor(t => t.Pin, f => 
                 f.Random.Replace("####"))
 
+            .RuleFor(t => t.CategoryId, f => 
+                f.Random.Int(1, 4))
+            
             .RuleFor(t => t.StartDate, f => 
                 f.Date.Between(new DateTime(2021,1,1), DateTime.Now));
+
 
         return fakeTaxpayer.Generate(count);
 
     }
+
+    /// <summary>
+    /// Pre-defined categories
+    /// </summary>
+    /// <returns></returns>
+    public static List<Category> Categories() =>
+        new()
+        {
+            new () { Description = "Needs review" },
+            new () { Description = "Incomplete" },
+            new () { Description = "Rejected" },
+            new () { Description = "Complete" }
+        };
 
     /// <summary>
     /// Example for using <see cref="Bogus"/> to generate a random SSN, in this case with dashes.

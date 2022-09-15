@@ -17,7 +17,7 @@ namespace TaxpayerMocking
             foreach (var taxpayer in taxpayers)
             {
                 table.AddRow(taxpayer.Id.ToString(), taxpayer.FullName, taxpayer.SocialSecurityNumber, taxpayer.Pin,
-                    taxpayer.StartDate.Value.ToString("MM/dd/yyyy"));
+                    taxpayer.StartDate.Value.ToString("MM/dd/yyyy"), taxpayer.Category.Description);
             }
 
             AnsiConsole.Write(table);

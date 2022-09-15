@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace TaxpayerLibraryEntityVersion.Models
 {
@@ -15,6 +16,21 @@ namespace TaxpayerLibraryEntityVersion.Models
         public string SocialSecurityNumber => SSN.Insert(5, "-").Insert(3, "-");
         public string Pin { get; set; }
         public DateTime? StartDate { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
         public override string ToString() => $"{FirstName} {LastName}";
+    }
+
+    public class Category
+    {
+        [Key]
+        public int CategoryId { get; set; }
+        public string Description { get; set; }
+        public List<Taxpayer> Books { get; set; }
+
+        public Category()
+        {
+            Books = new List<Taxpayer>();
+        }
     }
 }
