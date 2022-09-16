@@ -22,7 +22,7 @@ namespace TaxpayerLibrary.Classes
             List<Taxpayer> list = new();
 
 
-            var statement = "SELECT Id,FirstName,LastName,SSN,Pin,StartDate FROM dbo.Taxpayer";
+            var statement = "SELECT Id, FirstName, LastName, SSN, Pin, StartDate, CategoryId FROM dbo.Taxpayer";
             await using var cn = new SqlConnection(ConfigurationHelper.ConnectionString());
             await using var cmd = new SqlCommand { Connection = cn, CommandText = statement };
 
@@ -38,7 +38,8 @@ namespace TaxpayerLibrary.Classes
                     LastName = reader.GetString(2), 
                     SSN = reader.GetString(3), 
                     Pin = reader.GetString(4), 
-                    StartDate = DateOnly.FromDateTime(reader.GetDateTime(5))
+                    StartDate = DateOnly.FromDateTime(reader.GetDateTime(5)), 
+                    CategoryId = reader.GetInt32(6)
                 });
             }
 

@@ -12,6 +12,7 @@ public class Taxpayer
     public string SocialSecurityNumber => SSN.Insert(5, "-").Insert(3, "-");
     public string Pin { get; set; }
     public DateOnly? StartDate { get; set; }
+    public int CategoryId { get; set; }
 
     public override string ToString() => $"{FirstName} {LastName}";
 

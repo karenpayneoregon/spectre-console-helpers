@@ -87,11 +87,11 @@ namespace TaxpayerLibraryEntityVersion.Classes
 
         }
 
-        public static void Demo()
-        {
-
-        }
-
+        /// <summary>
+        /// Add a new <see cref="Taxpayer"/>
+        /// </summary>
+        /// <param name="taxpayer"></param>
+        /// <returns></returns>
         public static async Task AddNewTaxpayer(Taxpayer taxpayer)
         {
             await using var context = new OedContext();

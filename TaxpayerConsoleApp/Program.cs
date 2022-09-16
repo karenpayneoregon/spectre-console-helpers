@@ -18,7 +18,8 @@ internal partial class Program
 
         //EF.Taxpayer taxpayer = await AddTaxpayerEntityVersion();
         //await EditTaxpayerDataProvider();
-        await EntityDataOperations.GetOriginalValuesAfterEditingVersion2();
+        //await EntityDataOperations.GetOriginalValuesAfterEditingVersion2();
+        await ReadTaxpayersUsingDataProvider();
         Console.ReadLine();
     }
 
@@ -44,7 +45,7 @@ internal partial class Program
 
         foreach (var taxpayer in list)
         {
-            AnsiConsole.MarkupLine($"{taxpayer.Id,-3}{taxpayer.FullName} {taxpayer.StartDate} {taxpayer.SSN} {taxpayer.Pin}");
+            AnsiConsole.MarkupLine($"{taxpayer.Id,-3}{taxpayer.FullName,-23} {taxpayer.StartDate?.ToString("MM/dd/yyyy")} {taxpayer.SSN} {taxpayer.Pin} {taxpayer.CategoryId}");
         }
     }
 
