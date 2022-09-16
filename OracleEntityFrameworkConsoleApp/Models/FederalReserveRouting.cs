@@ -28,4 +28,7 @@ internal class FederalReserveRouting
     [Column("VALID_FLAG")]
     public string Flag { get; set; }
 
+    public override string ToString() => RoutingNumber;
+
+
 }
