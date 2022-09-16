@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OracleEntityFrameworkConsoleApp.Models;
 using Microsoft.Extensions.Logging;
+using ConfigurationLibrary.Classes;
 
 namespace OracleEntityFrameworkConsoleApp.Data
 {
@@ -26,14 +27,6 @@ namespace OracleEntityFrameworkConsoleApp.Data
     /// </remarks>
     internal class OedContext : DbContext
     {
-        /// <summary>
-        /// Cheap way to ensure sensitive information is not shown and/or placed
-        /// into the Git repo.
-        /// </summary>
-        private string ConnectionString() 
-            => File.ReadAllText(@"C:\OED\DotnetLand\VS2022\OracleConnections\DevOcs.txt");
-
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             StandardLogging(optionsBuilder);
@@ -46,7 +39,7 @@ namespace OracleEntityFrameworkConsoleApp.Data
         {
 
             optionsBuilder
-                .UseOracle(ConnectionString())
+                .UseOracle(ConfigurationHelper.ConnectionString())
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 
         }
@@ -54,7 +47,7 @@ namespace OracleEntityFrameworkConsoleApp.Data
         {
 
             optionsBuilder
-                .UseOracle(ConnectionString())
+                .UseOracle(ConfigurationHelper.ConnectionString())
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
                 .EnableSensitiveDataLogging()
                 .LogTo(message => Debug.WriteLine(message), 

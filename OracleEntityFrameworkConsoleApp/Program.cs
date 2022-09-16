@@ -10,7 +10,7 @@ namespace OracleEntityFrameworkConsoleApp
         {
             await Task.Delay(0);
             //await LineFlagsExample();
-            //await FederalReserveFindExample();
+            await FederalReserveFindExample();
 
             ExitPrompt();
         }
