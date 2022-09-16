@@ -17,7 +17,7 @@ namespace OracleEntityFrameworkConsoleApp
             Console.Title = "Code sample";
             WindowUtility.SetConsoleWindowPosition(WindowUtility.AnchorWindow.Center);
         }
-        private static Table CreateTable(int count)
+        private static Table CreateLineFlagTable(int count)
         {
             return new Table()
                 .RoundedBorder().BorderColor(Color.LightSlateGrey)
@@ -27,6 +27,7 @@ namespace OracleEntityFrameworkConsoleApp
                 .Alignment(Justify.Center)
                 .Title($"[white on blue]First {count} rows in table[/]");
         }
+
 
         private static void Render(Rule rule)
         {
