@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace OracleEntityFrameworkConsoleApp.Models;
+namespace OracleEntityFrameworkLibrary.Models;
 
 [Keyless]
 [Table("LINE_FLAG_CODES")]
-internal class LineFlagCodes
+public class LineFlagCodes
 {
     
     [Column("CODE")]

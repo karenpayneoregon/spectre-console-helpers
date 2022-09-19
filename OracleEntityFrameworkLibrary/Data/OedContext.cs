@@ -1,15 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OracleEntityFrameworkConsoleApp.Models;
+﻿using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using ConfigurationLibrary.Classes;
+using OracleEntityFrameworkLibrary.Models;
+using static ConfigurationLibrary.Classes.ConfigurationHelper;
 
-namespace OracleEntityFrameworkConsoleApp.Data
+namespace OracleEntityFrameworkLibrary.Data
 {
     /// <summary>
     /// 
@@ -25,29 +20,46 @@ namespace OracleEntityFrameworkConsoleApp.Data
     /// avoids the overhead of setting up change tracking for each entity instance. 
     /// https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontextoptionsbuilder.usequerytrackingbehavior?view=efcore-6.0
     /// </remarks>
-    internal class OedContext : DbContext
+    public class OedContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            // log information to Visual Studio's Output window
             StandardLogging(optionsBuilder);
         }
 
         public virtual DbSet<LineFlagCodes> LineFlagCodes { get; set; }
         public virtual DbSet<FederalReserveRouting> FederalReserveRouting { get; set; }
 
+        /// <summary>
+        /// Setup
+        /// * Connection string
+        /// * Indicate not to track changes for all read statements
+        ///
+        /// This is for production
+        /// </summary>
         public void NoLogging(DbContextOptionsBuilder optionsBuilder)
         {
 
             optionsBuilder
-                .UseOracle(ConfigurationHelper.ConnectionString())
+                .UseOracle(ConnectionString())
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 
         }
+
+        /// <summary>
+        /// Setup
+        /// * Connection string
+        /// * Indicate not to track changes for all read statements
+        /// * Enable specific logging to the Output window
+        ///
+        /// This is for non-prod environments
+        /// </summary>
         public void StandardLogging(DbContextOptionsBuilder optionsBuilder)
         {
 
             optionsBuilder
-                .UseOracle(ConfigurationHelper.ConnectionString())
+                .UseOracle(ConnectionString())
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
                 .EnableSensitiveDataLogging()
                 .LogTo(message => Debug.WriteLine(message), 

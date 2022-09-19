@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace OracleEntityFrameworkConsoleApp.Models;
+namespace OracleEntityFrameworkLibrary.Models;
 
 [Keyless]
 [Table("FEDERAL_RESERVE_ROUTINGS")]
-internal class FederalReserveRouting
+public class FederalReserveRouting
 {
     [Column("ROUTING_NUM")]
     public string RoutingNumber { get; set; }
