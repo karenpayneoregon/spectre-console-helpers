@@ -19,8 +19,13 @@ internal partial class Program
         var (list, _ ) = OracleOperations.TableNames();
         Random random = new Random();
         int index = random.Next(1, list.Count -1);
-        var tableName = list[index];
+        var tableName = list[44];
         var schema = OracleOperations.GetTableSchema(tableName);
 
+        var columns = string.Join(",", schema.Select(x => x.BaseColumnName).ToArray());
+        Console.WriteLine($"SELECT {columns} FROM {tableName}");
+
+
+        Console.ReadLine();
     }
 }

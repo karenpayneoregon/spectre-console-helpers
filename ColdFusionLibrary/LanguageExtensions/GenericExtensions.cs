@@ -28,6 +28,10 @@ public static class Extensions
 
             foreach (var typeProperty in typeProperties)
             {
+                if (!table.Columns.Contains(typeProperty.PropertyInfo.Name))
+                {
+                    continue;
+                }
                 object value = row[typeProperty.PropertyInfo.Name];
                 object safeValue = value is null || DBNull.Value.Equals(value) ?
                     null :

@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /OracleEntityFrameworkConsoleApp/appsettings.json
 /OracleUtils1/appsettings.json
+/ColdFusionApp/appsettings.json

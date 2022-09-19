@@ -17,24 +17,25 @@ namespace ColdFusionLibrary.Classes
         ///   and is not recommended but Karen did not want to type out what
         ///   it takes to while reader.Read etc
         /// </remarks>
-        public static List<MpcRecord> GetMpcRecords()
+        public static async Task<List<FederalReserveRouting>> FederalReserveRoutingAsync()
         {
 
-            using OracleConnection cn = new() { ConnectionString = ConnectionString() };
-            using OracleCommand cmd = new()
+            await using OracleConnection cn =  new () { ConnectionString = ConnectionString() };
+            await using OracleCommand cmd = new()
             {
                 Connection = cn,
-                CommandText = SqlStatements.GetMpcRecordsSelectStatement()
+                CommandText = SqlStatements.FederalReserveRouting()
             };
+
 
             cn.Open();
 
             DataTable dt = new();
 
-            dt.Load(cmd.ExecuteReader());
+            dt.Load(await cmd.ExecuteReaderAsync());
 
 
-            return dt.ToList<MpcRecord>();
+            return dt.ToList<FederalReserveRouting>();
         }
     }
 }
