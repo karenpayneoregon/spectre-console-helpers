@@ -7,8 +7,15 @@ namespace ConsoleApp1;
 
 internal partial class Program
 {
-    static void Main()
+    static async Task Main()
     {
+        var timer = new PeriodicTimer(TimeSpan.FromSeconds(1));
+        int counter = 1;
+        while (await timer.WaitForNextTickAsync() && counter < 3)
+        {
+            counter++;
+
+        }
         DataOperations.ReadTaxpayersLastNameStartsWithRight();
         //GroupByExample();
         //var low = new List<int> { 1, 2, 3, 4, 11 }.Select(IntExtensions.Ranking);

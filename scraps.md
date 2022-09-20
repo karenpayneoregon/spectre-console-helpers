@@ -1,6 +1,18 @@
 
 [![](assets/home-ec.png)](index.md)
 
+
+```csharp
+var timer = new PeriodicTimer(TimeSpan.FromSeconds(1));
+int counter = 1;
+while (await timer.WaitForNextTickAsync() && counter < 3)
+{
+    counter++;
+
+}
+```
+
+
 ```sql
 SELECT TOP 1
     Id,
