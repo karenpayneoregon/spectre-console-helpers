@@ -16,10 +16,12 @@
 
 	<ItemGroup>
 	  <None Remove="readme.md" />
+	  <None Remove="Scripts\Script1.sql" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Content Include="readme.md" />
+	  <Content Include="Scripts\Script1.sql" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="ConfigurationLibrary" Version="1.0.1" />
@@ -31,9 +33,5 @@
 	  <None Update="appsettings.json">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="assets\" />
-	  <Folder Include="Scripts\" />
 	</ItemGroup>
 </Project>
