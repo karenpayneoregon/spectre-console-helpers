@@ -1,6 +1,5 @@
-﻿using System.Diagnostics;
-using System.Net.NetworkInformation;
-using System.Text.Json;
+﻿using System.Net.NetworkInformation;
+
 using static System.Environment;
 
 namespace ComputerDetails.Classes;

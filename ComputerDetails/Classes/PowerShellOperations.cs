@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
+s;
 
 namespace ComputerDetails.Classes
 {
@@ -47,8 +44,6 @@ namespace ComputerDetails.Classes
 
         public static async Task<(bool succcess, string, Exception localException)> DotNetRuntimes()
         {
-
-            List<Version> list = new();
             try
             {
 
@@ -64,14 +59,16 @@ namespace ComputerDetails.Classes
                 using var reader = process!.StandardOutput;
 
                 process.EnableRaisingEvents = true;
+
                 var lineData = await reader.ReadToEndAsync();
                 var items = lineData.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+
                 StringBuilder builder = new();
                 foreach (var item in items)
                 {
                     if (item.Contains("["))
                     {
-                        builder.AppendLine("   " + item.Substring(0, item.IndexOf("[") - 1));
+                        builder.AppendLine("   " + item.Substring(0, item.IndexOf("[", StringComparison.Ordinal) - 1));
                     }
                 }
 
