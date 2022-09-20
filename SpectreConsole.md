@@ -1,5 +1,7 @@
 # About
 
+[![](assets/home-ec.png)](index.md)
+
 Source code for pre-build inputs for [Spectre.Console](https://spectreconsole.net/).
 
 If interested in working with Console projects, see [my repository](https://github.com/karenpayneoregon/console-apps) dedicated to Console projects which has several examples for creating dotnet tools also.

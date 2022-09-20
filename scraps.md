@@ -1,3 +1,6 @@
+
+[![](assets/home-ec.png)](index.md)
+
 ```sql
 SELECT TOP 1
     Id,

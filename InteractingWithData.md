@@ -1,5 +1,6 @@
-
 # Connect to a SQL-Server database using a managed data provider
+
+[![](assets/home-ec.png)](index.md)
 
 The basics for connecting to a database requires a connection string which is used in a connection object, [SqlConnection](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlconnection?view=dotnet-plat-ext-6.0) (sqlclient is the data provider) in this case for SQL-Server, localDb[^1].
 

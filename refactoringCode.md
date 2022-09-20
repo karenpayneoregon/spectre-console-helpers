@@ -1,5 +1,7 @@
 # Quick Actions
 
+[![](assets/home-ec.png)](index.md)
+
 Quick Actions let you easily refactor, generate, or otherwise modify code with a single action.
 
 The icon that appears when a Quick Action is available gives an indication of the type of fix or refactoring that's available. The `screwdriver screwdriver` icon icon indicates just that there are actions available to change the code, but you shouldn't necessarily use them. The `yellow light bulb` light bulb icon icon indicates there are actions available that you should do to improve your code. The `error light bulb` icon icon indicates there's an action available that fixes an error in your code.

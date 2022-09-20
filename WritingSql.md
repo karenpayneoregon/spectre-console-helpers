@@ -1,3 +1,5 @@
+[![](assets/home-ec.png)](index.md)
+
 Always write your SQL statements in SSMS not in code if unsure of how to make a specific query
 
 [Writing SQL for your application](See https://github.com/karenpayneoregon/writing-sql-queries-csharp)

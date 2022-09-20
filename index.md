@@ -13,14 +13,16 @@ Here you will find information to assist with code helpers within Visual Studio
 |:------------- |:-------------|:-------------|
 | TaxpayerLibrary :small_orange_diamond: | Base data operations usig a Microsoft data provider | Microsoft supports all major databases, here we are using SQL-Server provider |
 | TaxpayerLibraryEntityVersion :small_orange_diamond: | Base data operations usig a Microsoft [EF Core 6](https://learn.microsoft.com/en-us/ef/core/) with SQL-Server | See also [tips for working with EF Core](https://github.com/karenpayneoregon/ef-core-6-tips) |
-| SpectreLibraryConsoleApp :small_blue_diamond: | code samples for enriching console apps | Dependent on custom [NuGet package](https://www.nuget.org/packages/SpectreConsoleLibrary/) |
+| SpectreLibraryConsoleApp :small_blue_diamond: | code samples for enriching console apps see [readme.md](SpectreConsole.md) | Dependent on custom [NuGet package](https://www.nuget.org/packages/SpectreConsoleLibrary/) |
 | TaxpayerConsoleApp :small_blue_diamond: | Read, add, edit data using EF Core 6 using SQL-Server | Uses TaxpayerLibraryEntityVersion project, Ask Karen for connections |
 | OracleEntityFrameworkConsoleApp :small_blue_diamond: | Simple EF Core using Oracle |  |
 | OracleEntityFrameworkLibrary :small_orange_diamond: | Data operations using EF Core 6 and Oracle for OracleEntityFrameworkConsoleApp project | Ask Karen for connections |
 | ColdFusionApp :small_blue_diamond: | uses Oracle data provider, not EF Core | Ask Karen for connections |
 | ColdFusionLibrary :small_orange_diamond: | Data operations for project ColdFusionApp |  |
-| OracleUtils1 | Basic code to get table schema for an Oracle table. | All code works but is  WIP |
+| OracleUtils1 :small_blue_diamond: | Basic code to get table schema for an Oracle table. | All code works but is  WIP |
 |  |  |  |
+
+**Legend**
 
 :small_orange_diamond: Class project
 
