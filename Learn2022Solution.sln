@@ -50,6 +50,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{57FDFC7C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridViewImages", "DataGridViewImages\DataGridViewImages.csproj", "{2F6E4537-E749-4323-8D97-775709852C1E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnet tools", "dotnet tools", "{CE0922AB-9D9B-4F04-BC82-5C04647FA1C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComputerDetails", "ComputerDetails\ComputerDetails.csproj", "{4098AC95-4D5A-4A70-9C0C-9B5DDBC0FE87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +108,10 @@ Global
 		{2F6E4537-E749-4323-8D97-775709852C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F6E4537-E749-4323-8D97-775709852C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F6E4537-E749-4323-8D97-775709852C1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4098AC95-4D5A-4A70-9C0C-9B5DDBC0FE87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4098AC95-4D5A-4A70-9C0C-9B5DDBC0FE87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4098AC95-4D5A-4A70-9C0C-9B5DDBC0FE87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4098AC95-4D5A-4A70-9C0C-9B5DDBC0FE87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +129,7 @@ Global
 		{9709948C-9CBB-44E0-BAF9-9723353A31EE} = {A5C140B0-3EBF-4D75-A9BC-8BC1F1B40B8F}
 		{84C93CC5-724D-495A-BF05-CA0A0307B7FF} = {A5C140B0-3EBF-4D75-A9BC-8BC1F1B40B8F}
 		{2F6E4537-E749-4323-8D97-775709852C1E} = {57FDFC7C-CBE7-4B83-B91F-47C059361BFC}
+		{4098AC95-4D5A-4A70-9C0C-9B5DDBC0FE87} = {CE0922AB-9D9B-4F04-BC82-5C04647FA1C9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9B5E011C-77D9-4168-8636-369C58B5CCAE}

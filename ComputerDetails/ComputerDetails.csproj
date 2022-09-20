@@ -1,0 +1,85 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<ApplicationIcon>assets\OEDsmall.ico</ApplicationIcon>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>OED Computer details</Title>
+		<Description>Provides several details about the current computer</Description>
+		<Copyright>OED/Karen Payne (c) 2022</Copyright>
+		<PackageIcon>OEDsmall.png</PackageIcon>
+		<RepositoryUrl>https://github.com/OED-Applications/internal-utilities</RepositoryUrl>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackAsTool>True</PackAsTool>
+		<PackageOutputPath>./nupkg</PackageOutputPath>
+		<ToolCommandName>oed</ToolCommandName>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="licenses\LICENSE.txt" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="assets\OEDsmall.ico" />
+	  <Content Include="readme.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="licenses\LICENSE.txt">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ConsoleHelperLibrary" Version="1.0.0" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="ConfigurationLibrary" Version="1.0.1" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Spectre.Console" Version="0.44.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="appsettings.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="assets\OEDsmall.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Update="OEDsmall.png">
+	    <PackagePath>\</PackagePath>
+	    <Pack>True</Pack>
+	  </None>
+	  <None Update="readme.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+</Project>
