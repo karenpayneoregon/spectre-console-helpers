@@ -1,15 +1,30 @@
 ﻿using Newtonsoft.Json;
 using TaxpayerLibraryEntityVersion.Models;
 using TaxpayerMocking.Classes;
+using TaxpayerMocking.LanguageExtensions;
 
 namespace TaxpayerMocking
 {
     internal partial class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// This code is responsible for creating a new database and populating it with data
+        /// As coded if the database does not exists it's created, otherwise display data.
+        ///
+        /// Alternate use is to run SetupDatabase.Initialize(25); even if the database exist
+        /// to refresh after during the data.
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        static async Task Main(string[] args)
         {
+            var databaseExists = await LocalDbOperations.CanConnect();
 
-            SetupDatabase.Initialize(25);
+            if (!databaseExists)
+            {
+                SetupDatabase.Initialize(25);
+            }
+
             List<Taxpayer> taxpayerList = SetupDatabase.GetTaxpayers();
 
             JsonExample(taxpayerList);
