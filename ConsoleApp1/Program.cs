@@ -9,6 +9,7 @@ internal partial class Program
 {
     static async Task Main()
     {
+
         var timer = new PeriodicTimer(TimeSpan.FromSeconds(1));
         int counter = 1;
         while (await timer.WaitForNextTickAsync() && counter < 3)
