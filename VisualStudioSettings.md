@@ -51,6 +51,15 @@ To ensure projects are placed in the correct location, under `Tools` menu, `Opti
 
 ![Options1](assets/options1.png)
 
+## GitHub basics in Visual Studio
+
+See [the following page](https://visualstudio.microsoft.com/vs/github/) at Microsoft.
+
+> **Note**
+> While teaching OED developers recently, several had issues and if you do see Karen. An alternate is [GitDesk](https://desktop.github.com/) which seems to fail also and in both cases it appears to be from OED security interfering. The last option is going to a repository and downloading via a `.zip` file which is not recommended for several reasons including files being marked with mark of the web which is tedious to remove but if this is the only way see [Mark of the web remover](https://github.com/karenpayneoregon/mark-of-web-tool).
+
+
+
 ## Cloning GitHub repository
 
 Make sure to check where the cloned repository will be placed. It's possible that the default path may be under your user profile and if so, make sure to change to the recommend paths above.
