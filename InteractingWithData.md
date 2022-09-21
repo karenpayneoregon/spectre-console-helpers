@@ -270,7 +270,27 @@ public static async Task<(Taxpayer taxpayer, bool)> EditTaxpayer()
 In the database table for Taxpayer, there is a `date` column which in the .NET side use to map to a [DateTime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0) struct which means the time is included which will alway be midnight. We don't need the time so instead a new type is used, [DateOnly](https://docs.microsoft.com/en-us/dotnet/api/system.dateonly?view=net-6.0) but the data provider knows nothing about DateOnly so the following transforms the DateTime to a DateOnly `DateOnly.FromDateTime(reader.GetDateTime(4))`
 
 
+# Connection in ASP.NET Core
+ 
+The following services.[AddDbContext](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.dependencyinjection.entityframeworkservicecollectionextensions.adddbcontext?view=efcore-6.0)&lt;NorthWind2020Context> is used to setup EF Core in `Startup.cs`
 
+```csharp
+public IConfiguration Configuration { get; }
+
+// This method gets called by the runtime. Use this method to add services to the container.
+public void ConfigureServices(IServiceCollection services)
+{
+    services
+        .AddControllersWithViews()
+        .AddNewtonsoftJson(options => 
+            options.SerializerSettings.ContractResolver = 
+                new DefaultContractResolver());
+
+    services.AddKendo();
+    services.AddDbContext<NorthWind2020Context>(options =>
+        options.UseSqlServer(ConfigurationHelper.ConnectionString()));
+}
+```
 
 
 [^1]: What is LocalDB? It is a new version of SQL Server Express dedicated to developers to help them avoid a full installation of other editions of SQL Server. LocalDb should never be used for enterprise applications. It is easy to port from LocalDb to a enterprise database.
