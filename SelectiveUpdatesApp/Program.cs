@@ -44,7 +44,7 @@ namespace SelectiveUpdatesApp
             PersonModel model = new PersonModel() { Id = identifier, FirstName = "Kate" };
 
             context.Attach(person);
-            context.Entry(person).CurrentValues.SetValues(model); /// reflection
+            context.Entry(person).CurrentValues.SetValues(model);
             context.SaveChanges();
 
             AnsiConsole.MarkupLine($"[cyan]Done[/] [yellow]{nameof(SecondExample)}[/]");
