@@ -2,7 +2,7 @@
 
 ![Data Updates](assets/DataUpdates.png)
 
-When a developer <u>does not</u> want to update an entire record which has been modified there are two options.
+When a developer **does not** want to update an entire record which has been modified there are two options.
 
 ## Option 1
 
