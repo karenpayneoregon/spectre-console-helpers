@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SelectiveUpdatesApp.Data;
+using SelectiveUpdatesApp.Models;
 
 namespace SelectiveUpdatesApp
 {
@@ -7,6 +8,16 @@ namespace SelectiveUpdatesApp
     {
         static void Main(string[] args)
         {
+            FirstExample();
+            SecondExample();
+            AnsiConsole.MarkupLine("[white on blue]Time to exit[/]");
+            Console.ReadLine();
+        }
+
+        private static void FirstExample()
+        {
+            AnsiConsole.MarkupLine($"[cyan]Running[/] [yellow]{nameof(FirstExample)}[/]");
+
             using var context = new Context();
             var person = context.Person.FirstOrDefault();
 
@@ -18,9 +29,26 @@ namespace SelectiveUpdatesApp
                 context.Entry(person).Property(p => p.LastName).IsModified = false;
                 context.SaveChanges();
             }
-            
-            AnsiConsole.MarkupLine("[yellow]Done[/]");
-            Console.ReadLine();
+
+            AnsiConsole.MarkupLine($"[cyan]Done[/] [yellow]{nameof(FirstExample)}[/]");
+
+        }
+
+        private static void SecondExample()
+        {
+            AnsiConsole.MarkupLine($"[cyan]Running[/] [yellow]{nameof(SecondExample)}[/]");
+
+            using var context = new Context();
+            int identifier = 2;
+            var person = new Person() { Id = identifier };
+            PersonModel model = new PersonModel() { Id = identifier, FirstName = "Kate" };
+
+            context.Attach(person);
+            context.Entry(person).CurrentValues.SetValues(model); /// reflection
+            context.SaveChanges();
+
+            AnsiConsole.MarkupLine($"[cyan]Done[/] [yellow]{nameof(SecondExample)}[/]");
+
         }
     }
 }
