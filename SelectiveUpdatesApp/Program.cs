@@ -18,8 +18,8 @@ namespace SelectiveUpdatesApp
         {
             AnsiConsole.MarkupLine($"[cyan]Running[/] [yellow]{nameof(FirstExample)}[/]");
 
-            using var context = new Context();
-            var person = context.Person.FirstOrDefault();
+            using Context context = new ();
+            Person person = context.Person.FirstOrDefault();
 
             if (person is not null)
             {
@@ -38,10 +38,10 @@ namespace SelectiveUpdatesApp
         {
             AnsiConsole.MarkupLine($"[cyan]Running[/] [yellow]{nameof(SecondExample)}[/]");
 
-            using var context = new Context();
+            using Context context = new ();
             int identifier = 2;
-            var person = new Person() { Id = identifier };
-            PersonModel model = new PersonModel() { Id = identifier, FirstName = "Kate" };
+            Person person = new () { Id = identifier };
+            PersonModel model = new() { Id = identifier, FirstName = "Kate" };
 
             context.Attach(person);
             context.Entry(person).CurrentValues.SetValues(model);
