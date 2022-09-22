@@ -18,4 +18,4 @@ if (person is not null)
 ```
 
 > **Note**
-> Run executing the code, review the logging in Visual Studio Output window.
+> After executing the code, review the logging in Visual Studio Output window to see the UPDATE statement.
