@@ -1,5 +1,7 @@
 ﻿# EF Core: Update selected properties for a record
 
+![Data Updates](assets/DataUpdates.png)
+
 When a developer does not want to update an entire record which has been modified there are two options.
 
 ## Option 1
@@ -69,3 +71,9 @@ public partial class Person
 
 > **Note**
 > After executing the code, review the logging in Visual Studio Output window to see the UPDATE statement. Also, take time to run the code through Visual Studio's debugger by setting breakpoints to better understand what the code is doing rather than copy-n-pasting into one of your projects.
+
+# Requires
+
+- Microsoft Visual Studio 2022 or higher
+- .NET Core 6 or higher
+- Suggest SSMS (SQL-Server Management Studio) for data inspection
