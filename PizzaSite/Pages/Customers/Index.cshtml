@@ -5,9 +5,17 @@
     ViewData["Title"] = "Index";
 }
 
+@*
+    This is how to get CSS Isolation to work
+    Add a new file named `basePageName`.cshtml.css
+    Add the link (as per below) specifying the project namespace
+*@
+<link rel="stylesheet" href="~/@(nameof(PizzaShop)).styles.css" />
 
 
 <h1>Index</h1>
+
+<h6 class="spread2">I have an isolated style sheet</h6>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -70,6 +78,6 @@
             }
         </tbody>
     </table>
-    
+
     <a asp-page="../Index" class="btn btn-primary">Home</a>
 </div>

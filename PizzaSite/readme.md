@@ -6,7 +6,15 @@ This is a basic ASP.NET Core [^1] project using Razor Pages [^2] using Entity Fr
 
 Functionality is broken up as follows
 
-## Pages
+## wwwroot
+
+CSS, JavaScript libraries
+
+## Pages/Shared
+
+Site wide configuration
+
+## Pages/Views
 
 The `Pages` folder contains pages for each model [^4]. Under each folder e.g. the `Customers` folder are several pages, for
 
@@ -16,6 +24,14 @@ The `Pages` folder contains pages for each model [^4]. Under each folder e.g. th
 - Removal of data
 
 For this project I left some pages disconected or left out to show (if time permits) how to create a new page.
+
+# Libraries
+
+Visual Studio has a component, `libman` which allows adding external libraries such as OED libraries and/or libraries such as BootStrap (ASP.NET Core comes with the current release of BootStrap).
+
+**libman**
+
+![Libman](assets/libman.png)
 
 # Entity Framework Core
 
