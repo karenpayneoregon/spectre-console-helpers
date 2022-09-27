@@ -2,16 +2,18 @@
 @model ContosoPizza.Pages.Orders.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Orders";
 }
 
-<h1>Index</h1>
+<h1>Orders</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a class="link_button" asp-page="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
+
+<div class="table-responsive-lg">
+    <table class="table">
+        <thead class="table-danger">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Order[0].OrderPlaced)
@@ -24,8 +26,8 @@
             </th>
             <th></th>
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         @foreach (var item in Model.Order)
         {
             <tr>
@@ -45,5 +47,7 @@
                 </td>
             </tr>
         }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+
+</div>

@@ -14,12 +14,15 @@ public partial class Order
 
     [Key]
     public int Id { get; set; }
+    [Display(Name = "Placed")]
     public DateTime OrderPlaced { get; set; }
+    [Display(Name = "Delivered")]
     public DateTime? OrderFulfilled { get; set; }
     public int CustomerId { get; set; }
 
     [ForeignKey("CustomerId")]
     [InverseProperty("Orders")]
+    [Display(Name = "Person")]
     public virtual Customer Customer { get; set; } = null!;
     [InverseProperty("Order")]
     public virtual ICollection<OrderDetail> OrderDetails { get; set; }
