@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace ContosoPizza.Models;
+namespace PizzaShop.Models;
 
 [Index("OrderId", Name = "IX_OrderDetails_OrderId")]
 [Index("ProductId", Name = "IX_OrderDetails_ProductId")]
@@ -20,4 +20,7 @@ public partial class OrderDetail
     [ForeignKey("ProductId")]
     [InverseProperty("OrderDetails")]
     public virtual Product Product { get; set; } = null!;
+
+    public override string ToString() => $"{Id} Order id: {OrderId}";
+
 }

@@ -1,10 +1,14 @@
-﻿#nullable disable
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using PizzaShop.Data;
 using PizzaShop.Models;
 
-namespace PizzaShop.Pages.Customers
+namespace PizzaShop.Pages.Products
 {
     public class IndexModel : PageModel
     {
@@ -15,13 +19,14 @@ namespace PizzaShop.Pages.Customers
             _context = context;
         }
 
-        public IList<Customer> Customer { get;set; }
+        public IList<Product> Product { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            Customer = await _context.Customers
-                                .Include(c => c.Orders)
-                                .ToListAsync();
+            if (_context.Products != null)
+            {
+                Product = await _context.Products.ToListAsync();
+            }
         }
     }
 }

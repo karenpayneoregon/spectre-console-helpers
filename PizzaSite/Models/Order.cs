@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace ContosoPizza.Models;
+namespace PizzaShop.Models;
 
 [Index("CustomerId", Name = "IX_Orders_CustomerId")]
 public partial class Order
@@ -26,4 +26,7 @@ public partial class Order
     public virtual Customer Customer { get; set; } = null!;
     [InverseProperty("Order")]
     public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+
+    public override string ToString() => $"{Id} Customer: {CustomerId}";
+
 }

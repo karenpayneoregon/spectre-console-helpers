@@ -1,9 +1,9 @@
 using ConfigurationLibrary.Classes;
-using ContosoPizza.Classes;
-using ContosoPizza.Data;
 using Microsoft.EntityFrameworkCore;
+using PizzaShop.Classes;
+using PizzaShop.Data;
 
-namespace ContosoPizza;
+namespace PizzaShop;
 
 class Program
 {
@@ -16,7 +16,7 @@ class Program
         builder.Services.AddDbContext<PizzaContext>(options =>
             options.UseSqlServer(ConfigurationHelper.ConnectionString()));
 
-        var app = builder.Build();
+        WebApplication app = builder.Build();
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
@@ -28,11 +28,8 @@ class Program
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();
-
         app.UseRouting();
-
         app.UseAuthorization();
-
         app.MapRazorPages();
 
         if (Environment.GetEnvironmentVariable("CREATE_DB") == "Yes")

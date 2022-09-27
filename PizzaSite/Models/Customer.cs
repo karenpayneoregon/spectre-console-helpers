@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ContosoPizza.Models;
+namespace PizzaShop.Models;
 
 public partial class Customer
 {
@@ -20,4 +20,7 @@ public partial class Customer
 
     [InverseProperty("Customer")]
     public virtual ICollection<Order> Orders { get; set; }
+
+    public override string ToString() => $"{FirstName} {LastName}";
+
 }

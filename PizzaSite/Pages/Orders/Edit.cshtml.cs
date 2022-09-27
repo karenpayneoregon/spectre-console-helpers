@@ -1,11 +1,15 @@
-﻿#nullable disable
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PizzaShop.Data;
 using PizzaShop.Models;
 
-namespace PizzaShop.Pages.Customers
+namespace PizzaShop.Pages.Orders
 {
     public class EditModel : PageModel
     {
@@ -17,21 +21,22 @@ namespace PizzaShop.Pages.Customers
         }
 
         [BindProperty]
-        public Customer Customer { get; set; }
+        public Order Order { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Orders == null)
             {
                 return NotFound();
             }
 
-            Customer = await _context.Customers.FirstOrDefaultAsync(m => m.Id == id);
-
-            if (Customer == null)
+            var order =  await _context.Orders.FirstOrDefaultAsync(m => m.Id == id);
+            if (order == null)
             {
                 return NotFound();
             }
+            Order = order;
+           ViewData["CustomerId"] = new SelectList(_context.Customers, "Id", "Id");
             return Page();
         }
 
@@ -44,7 +49,7 @@ namespace PizzaShop.Pages.Customers
                 return Page();
             }
 
-            _context.Attach(Customer).State = EntityState.Modified;
+            _context.Attach(Order).State = EntityState.Modified;
 
             try
             {
@@ -52,7 +57,7 @@ namespace PizzaShop.Pages.Customers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CustomerExists(Customer.Id))
+                if (!OrderExists(Order.Id))
                 {
                     return NotFound();
                 }
@@ -65,9 +70,9 @@ namespace PizzaShop.Pages.Customers
             return RedirectToPage("./Index");
         }
 
-        private bool CustomerExists(int id)
+        private bool OrderExists(int id)
         {
-            return _context.Customers.Any(e => e.Id == id);
+          return _context.Orders.Any(e => e.Id == id);
         }
     }
 }

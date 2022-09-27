@@ -1,5 +1,5 @@
 ﻿@page
-@model ContosoPizza.Pages.Customers.IndexModel
+@model PizzaShop.Pages.Customers.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -62,13 +62,14 @@
                         @item.Orders.Count
                     </td>
                     <td>
-                        <a class="link_button" asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
-                        <a class="link_button" asp-page="./Details" asp-route-id="@item.Id">Details</a>
-                        <a class="link_button" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Edit</a> &nbsp;
+                        <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Details</a> &nbsp;
+                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Delete</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-
+    
+    <a asp-page="../Index" class="btn btn-primary">Home</a>
 </div>

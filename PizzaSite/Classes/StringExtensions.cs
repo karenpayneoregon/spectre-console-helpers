@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace ContosoPizza.Classes;
+namespace PizzaShop.Classes;
 
 public static class StringExtensions
 {

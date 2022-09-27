@@ -1,15 +1,10 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using ContosoPizza.Data;
-using ContosoPizza.Models;
+using PizzaShop.Data;
+using PizzaShop.Models;
 
-namespace ContosoPizza.Pages.Customers
+namespace PizzaShop.Pages.Customers
 {
     public class CreateModel : PageModel
     {

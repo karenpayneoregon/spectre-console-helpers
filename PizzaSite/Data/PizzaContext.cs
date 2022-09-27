@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ContosoPizza.Models;
-using ConfigurationLibrary.Classes;
+﻿using ConfigurationLibrary.Classes;
+using Microsoft.EntityFrameworkCore;
+using PizzaShop.Models;
 
-namespace ContosoPizza.Data
+namespace PizzaShop.Data
 {
     public partial class PizzaContext : DbContext
     {
@@ -12,6 +12,10 @@ namespace ContosoPizza.Data
         {
         }
 
+        /// <summary>
+        /// This overloaded constructor is used to setup for creating the database
+        /// </summary>
+        /// <param name="create"></param>
         public PizzaContext(bool create)
         {
             _create = create;

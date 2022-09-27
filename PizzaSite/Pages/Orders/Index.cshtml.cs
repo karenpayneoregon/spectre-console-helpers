@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ContosoPizza.Data;
-using ContosoPizza.Models;
+using PizzaShop.Data;
+using PizzaShop.Models;
 
-namespace ContosoPizza.Pages.Orders
+namespace PizzaShop.Pages.Orders
 {
     public class IndexModel : PageModel
     {
@@ -25,7 +20,9 @@ namespace ContosoPizza.Pages.Orders
         {
             if (_context.Orders is not null)
             {
-                Order = await _context.Orders.Include(o => o.Customer)
+                Order = await _context
+                    .Orders.Include(o => o.Customer)
+                    .OrderBy(x => x.OrderPlaced)
                     .ToListAsync();
             }
         }

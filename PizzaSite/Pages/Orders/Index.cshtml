@@ -1,5 +1,5 @@
 ﻿@page
-@model ContosoPizza.Pages.Orders.IndexModel
+@model PizzaShop.Pages.Orders.IndexModel
 
 @{
     ViewData["Title"] = "Orders";
@@ -38,7 +38,7 @@
                     @Html.DisplayFor(modelItem => item.OrderFulfilled)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Customer.Id)
+                    @Html.DisplayFor(modelItem => item.Customer.LastName)
                 </td>
                 <td>
                     <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

@@ -64,7 +64,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelectiveUpdatesApp", "Sele
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web ef-core", "Web ef-core", "{B0AEEAC2-0905-478E-9112-EE606C284FE5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoPizza", "PizzaSite\ContosoPizza.csproj", "{77B3E953-EF7A-4761-89CC-8A53AC486664}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaShop", "PizzaSite\PizzaShop.csproj", "{77B3E953-EF7A-4761-89CC-8A53AC486664}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

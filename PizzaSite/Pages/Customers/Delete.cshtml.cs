@@ -1,21 +1,17 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ContosoPizza.Data;
-using ContosoPizza.Models;
+using PizzaShop.Data;
+using PizzaShop.Models;
 
-namespace ContosoPizza.Pages.Customers
+namespace PizzaShop.Pages.Customers
 {
     public class DeleteModel : PageModel
     {
-        private readonly ContosoPizza.Data.PizzaContext _context;
+        private readonly PizzaContext _context;
 
-        public DeleteModel(ContosoPizza.Data.PizzaContext context)
+        public DeleteModel(PizzaContext context)
         {
             _context = context;
         }
