@@ -7,6 +7,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Content Remove="wwwroot\lib\images\pizza.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="readme.md" />
 	</ItemGroup>
 
@@ -29,6 +33,12 @@
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="ConfigurationLibrary" Version="1.0.1" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="images\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="wwwroot\lib\images\pizza.png" />
 	</ItemGroup>
 
 </Project>
