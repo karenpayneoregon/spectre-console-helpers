@@ -13,9 +13,9 @@ namespace ContosoPizza.Pages.Customers
 {
     public class DeleteModel : PageModel
     {
-        private readonly ContosoPizza.Data.ContosoPizzaContext _context;
+        private readonly ContosoPizza.Data.PizzaContext _context;
 
-        public DeleteModel(ContosoPizza.Data.ContosoPizzaContext context)
+        public DeleteModel(ContosoPizza.Data.PizzaContext context)
         {
             _context = context;
         }

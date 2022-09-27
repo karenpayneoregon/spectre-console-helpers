@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 using ContosoPizza.Models;
 using ConfigurationLibrary.Classes;
-using ContosoPizza.Pages.Customers;
 
 namespace ContosoPizza.Data
 {
-    public partial class ContosoPizzaContext : DbContext
+    public partial class PizzaContext : DbContext
     {
         private readonly bool _create;
 
-        public ContosoPizzaContext()
+        public PizzaContext()
         {
         }
 
-        public ContosoPizzaContext(bool create)
+        public PizzaContext(bool create)
         {
             _create = create;
         }
 
-        public ContosoPizzaContext(DbContextOptions<ContosoPizzaContext> options)
+        public PizzaContext(DbContextOptions<PizzaContext> options)
             : base(options)
         {
         }

@@ -14,9 +14,9 @@ namespace ContosoPizza.Pages.Customers
 {
     public class EditModel : PageModel
     {
-        private readonly ContosoPizza.Data.ContosoPizzaContext _context;
+        private readonly ContosoPizza.Data.PizzaContext _context;
 
-        public EditModel(ContosoPizza.Data.ContosoPizzaContext context)
+        public EditModel(ContosoPizza.Data.PizzaContext context)
         {
             _context = context;
         }

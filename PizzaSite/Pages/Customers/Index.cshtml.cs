@@ -13,9 +13,9 @@ namespace ContosoPizza.Pages.Customers
 {
     public class IndexModel : PageModel
     {
-        private readonly ContosoPizza.Data.ContosoPizzaContext _context;
+        private readonly ContosoPizza.Data.PizzaContext _context;
 
-        public IndexModel(ContosoPizza.Data.ContosoPizzaContext context)
+        public IndexModel(ContosoPizza.Data.PizzaContext context)
         {
             _context = context;
         }

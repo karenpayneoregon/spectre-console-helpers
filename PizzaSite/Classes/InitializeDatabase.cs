@@ -7,7 +7,7 @@ namespace ContosoPizza.Classes
     {
         public static void Clean()
         {
-            using var context = new ContosoPizzaContext(true);
+            using var context = new PizzaContext(true);
             context.Database.EnsureCreated();
             context.Database.EnsureCreated();
         }
@@ -18,7 +18,7 @@ namespace ContosoPizza.Classes
             List<Order> orders = new List<Order>();
 
 
-            using var context = new ContosoPizzaContext(true);
+            using var context = new PizzaContext(true);
 
 
             context.SaveChanges();

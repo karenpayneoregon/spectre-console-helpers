@@ -13,7 +13,7 @@ class Program
 
         // Add services to the container.
         builder.Services.AddRazorPages();
-        builder.Services.AddDbContext<ContosoPizzaContext>(options =>
+        builder.Services.AddDbContext<PizzaContext>(options =>
             options.UseSqlServer(ConfigurationHelper.ConnectionString()));
 
         var app = builder.Build();

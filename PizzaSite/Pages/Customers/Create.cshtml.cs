@@ -13,14 +13,11 @@ namespace ContosoPizza.Pages.Customers
 {
     public class CreateModel : PageModel
     {
-        private readonly ContosoPizzaContext _context;
+        private readonly PizzaContext _context;
 
-        public CreateModel(ContosoPizzaContext context)
+        public CreateModel(PizzaContext context)
         {
             _context = context;
-
-
-
         }
 
         public IActionResult OnGet()
@@ -31,7 +28,6 @@ namespace ContosoPizza.Pages.Customers
         [BindProperty]
         public Customer Customer { get; set; }
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
