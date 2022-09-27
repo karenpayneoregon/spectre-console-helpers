@@ -1,5 +1,4 @@
-﻿#nullable disable
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ContosoPizza.Data;
 using ContosoPizza.Models;
 
-namespace ContosoPizza.Pages.Customers
+namespace ContosoPizza.Pages.Orders
 {
     public class IndexModel : PageModel
     {
@@ -20,13 +19,15 @@ namespace ContosoPizza.Pages.Customers
             _context = context;
         }
 
-        public IList<Customer> Customer { get;set; }
+        public IList<Order> Order { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            Customer = await _context.Customers
-                                .Include(c => c.Orders)
-                                .ToListAsync();
+            if (_context.Orders is not null)
+            {
+                Order = await _context.Orders.Include(o => o.Customer)
+                    .ToListAsync();
+            }
         }
     }
 }

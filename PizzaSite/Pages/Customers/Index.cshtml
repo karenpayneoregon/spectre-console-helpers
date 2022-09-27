@@ -5,62 +5,83 @@
     ViewData["Title"] = "Index";
 }
 
+<style>
+    .link_button {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border: solid 1px #20538D;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+        background: #4479BA;
+        color: #FFF;
+        padding: -2px 12px;
+        text-decoration: none;
+    }
+</style>
+
 <h1>Index</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Customer[0].FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customer[0].LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customer[0].Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customer[0].Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customer[0].Email)
-            </th>
-            <th>
-                Total Orders
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Customer) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @item.Orders.Count
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="table-responsive-lg">
+    <table class="table table-bordered">
+        <thead class="table-info">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer[0].FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer[0].LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer[0].Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer[0].Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer[0].Email)
+                </th>
+                <th>
+                    Total Orders
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Customer)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @item.Orders.Count
+                    </td>
+                    <td>
+                        <a class="link_button" asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                        <a class="link_button" asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                        <a class="link_button" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
