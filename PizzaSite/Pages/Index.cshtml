@@ -5,12 +5,32 @@
     ViewData["Title"] = "Home page";
 }
 
+
+
+@*
+    Used below for creating an unordered list
+*@
+
+@{
+    Dictionary<string, int> dictionary = new()
+    {
+        { "Bill", 20 },
+        { "Lisa", 12 },
+        { "Karen", 14 },
+        { "Lindon", 8 },
+        { "Bick", 23 }
+    };
+
+}
+
 <style>
     img {
         display: table-cell;
         vertical-align: middle;
         margin: auto;
     }
+
+
 </style>
 <div class="text-center">
     <h1 class="display-4 text-black-50">
@@ -18,6 +38,34 @@
     </h1>
 </div>
 
-@*<div class="container mt-lg-5">
-    <img src="lib/images/pizza2.png" />
-</div>*@
+@*
+    Simple example for mixing C# with HTML using BootStrap
+*@
+
+@*<div class="container-sm">
+    <h6>Mixing HTML with C#</h6>
+    <div class="row">
+        <div class="col-lg-3 col-md-4">
+            <ul class="list-group">
+                @foreach (var person in dictionary)
+                {
+                    <li class="list-group-item d-flex justify-content-between align-items-center bg-success text-white">
+                        @person.Key
+                        
+                        @if (person.Value > 12)
+                        {
+                            <span class="badge bg-dark rounded-pill">@person.Value</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-primary rounded-pill">@person.Value</span>
+                        }
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+*@
