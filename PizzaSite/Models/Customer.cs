@@ -7,6 +7,7 @@ public partial class Customer
 {
     public Customer()
     {
+        // ReSharper disable once VirtualMemberCallInConstructor
         Orders = new HashSet<Order>();
     }
 
