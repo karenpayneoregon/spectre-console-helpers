@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "ContosoPizza": {
+    "PizzaShop": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

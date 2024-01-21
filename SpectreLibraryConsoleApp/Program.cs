@@ -42,32 +42,6 @@ namespace SpectreLibraryConsoleApp
                 Console.WriteLine("No companies selected");
             }
         }
-        /// <summary>
-        /// Demonstrates working with <see cref="DateOnly"/> and <see cref="TimeOnly"/>
-        /// input
-        /// </summary>
-        private static void GetInoutExamples()
-        {
-            var password = Prompts.GetNewPassword("Enter a new password");
-            Console.WriteLine(password);
 
-            TimeOnly? only = Prompts.GetTimeOnly($"{Now:HH}:00");
-            if (only is not null)
-            {
-                Console.WriteLine(only);
-            }
-            else
-            {
-                Console.WriteLine("Null");
-            }
-
-            DateOnly? dateOnly = Prompts.GetDateOnly(new DateOnly(2022, 2, 2));
-            Console.WriteLine(dateOnly is not null ? dateOnly.Value.ToString("MM/dd/yyyy") : "Null");
-
-
-            Console.WriteLine(Prompts.GetBool("Question").ToYesNo());
-            Console.WriteLine(Prompt.GetYesNo("Question", true).ToYesNo());
-  
-        }
     }
 }
