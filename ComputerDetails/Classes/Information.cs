@@ -107,7 +107,7 @@ internal class Information
         }
         catch (Exception exception)
         {
-            return (information, exception);
+            return (info, exception);
 
         }
     }
