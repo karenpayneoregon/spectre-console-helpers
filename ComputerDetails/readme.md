@@ -10,3 +10,13 @@ Taken from 🠊 [here](https://github.com/karenpayneoregon/console-apps/tree/mas
 
 # List tools
 ![List Tools](assets/listTools.png)
+
+## Commands
+
+cd C:\OED\DotnetLand\VS2022\Learn2022Solution\ComputerDetails
+
+```
+dotnet tool install --global --add-source ./nupkg computerdetails
+dotnet tool uninstall -g computerdetails
+```
+

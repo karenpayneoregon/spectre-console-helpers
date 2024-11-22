@@ -2,22 +2,23 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net9.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 		<ApplicationIcon>assets\OEDsmall.ico</ApplicationIcon>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Title>OED Computer details</Title>
+		<Title>Computer details</Title>
 		<Description>Provides several details about the current computer</Description>
-		<Copyright>OED/Karen Payne (c) 2022</Copyright>
+		<Copyright>OED/Karen Payne (c) 2024s</Copyright>
 		<PackageIcon>OEDsmall.png</PackageIcon>
 		<RepositoryUrl>https://github.com/OED-Applications/internal-utilities</RepositoryUrl>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackAsTool>True</PackAsTool>
 		<PackageOutputPath>./nupkg</PackageOutputPath>
-		<ToolCommandName>oed</ToolCommandName>
+		<ToolCommandName>details</ToolCommandName>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<SdkAnalysisLevel>8.0.100</SdkAnalysisLevel>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -37,16 +38,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="ConsoleHelperLibrary" Version="1.0.0" />
+		<PackageReference Include="ConsoleHelperLibrary" Version="1.0.2" />
 	</ItemGroup>
 
 
 	<ItemGroup>
-		<PackageReference Include="ConfigurationLibrary" Version="1.0.1" />
-		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.0" />
+		<PackageReference Include="ConfigurationLibrary" Version="1.0.6" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Spectre.Console" Version="0.44.0" />
+		<PackageReference Include="Spectre.Console" Version="0.49.1" />
 	</ItemGroup>
 
 	<ItemGroup>

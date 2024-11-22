@@ -8,9 +8,22 @@ namespace ComputerDetails
         [ModuleInitializer]
         public static void Init()
         {
-            AnsiConsole.MarkupLine($"[cyan1]OED Web team[/] (C) {DateTime.Now.Year}");
-            AnsiConsole.MarkupLine($"By Karen Payne");
+            AnsiConsole.MarkupLine($"[cyan1]Computer details[/] {DateTime.Now.Year}");
+            //AnsiConsole.MarkupLine($"By Karen Payne");
             Console.WriteLine();
+        }
+
+        public static bool Question(string questionText)
+        {
+            ConfirmationPrompt prompt = new($"[{Color.Yellow}]{questionText}[/]")
+            {
+                DefaultValueStyle = new(Color.Cyan1, Color.Black, Decoration.None),
+                ChoicesStyle = new(Color.Yellow, Color.Black, Decoration.None),
+                InvalidChoiceMessage = $"[{Color.Red}]Invalid choice[/]. Please select a Y or N.",
+                DefaultValue = false
+            };
+
+            return prompt.Show(AnsiConsole.Console);
         }
     }
 }

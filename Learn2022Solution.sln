@@ -66,6 +66,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web ef-core", "Web ef-core"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaShop", "PizzaSite\PizzaShop.csproj", "{77B3E953-EF7A-4761-89CC-8A53AC486664}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{8BF975E1-2CBD-4F6D-ADC7-3667310A6837}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -136,6 +138,10 @@ Global
 		{77B3E953-EF7A-4761-89CC-8A53AC486664}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77B3E953-EF7A-4761-89CC-8A53AC486664}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77B3E953-EF7A-4761-89CC-8A53AC486664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BF975E1-2CBD-4F6D-ADC7-3667310A6837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BF975E1-2CBD-4F6D-ADC7-3667310A6837}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BF975E1-2CBD-4F6D-ADC7-3667310A6837}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BF975E1-2CBD-4F6D-ADC7-3667310A6837}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -158,6 +164,7 @@ Global
 		{DCEF8816-1142-45B5-BF92-93D4800FF026} = {5BD790CB-7EF9-410C-8895-9B4E6486D01B}
 		{FA8B9F1E-5D37-4E0E-A01F-75956BCA1A39} = {0C98C465-6C80-4D8E-9DF2-8BBF9A13A765}
 		{77B3E953-EF7A-4761-89CC-8A53AC486664} = {B0AEEAC2-0905-478E-9112-EE606C284FE5}
+		{8BF975E1-2CBD-4F6D-ADC7-3667310A6837} = {0C98C465-6C80-4D8E-9DF2-8BBF9A13A765}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9B5E011C-77D9-4168-8636-369C58B5CCAE}

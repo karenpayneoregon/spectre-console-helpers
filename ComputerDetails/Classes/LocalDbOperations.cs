@@ -8,12 +8,12 @@ namespace ComputerDetails.Classes
     {
         public static async Task<bool> CanConnect()
         {
-			try
-			{
-				await using var cn = new SqlConnection(ConfigurationHelper.ConnectionString());
+            try
+            {
+                await using var cn = new SqlConnection(ConfigurationHelper.ConnectionString());
                 return true;
             }
-			catch (Exception)
+            catch (Exception)
             {
                 return false;
             }

@@ -1,6 +1,8 @@
-﻿using System.Net.NetworkInformation;
+﻿using System.Diagnostics;
+using System.Net.NetworkInformation;
 
 using static System.Environment;
+using Version = System.Version;
 
 namespace ComputerDetails.Classes;
 
@@ -26,8 +28,14 @@ internal class Information
     }
 
     public static bool IsKarenPayne => UserName == "PayneK";
-    public static string VpnName => "_OED_OED_SYSADMIN_NA - raoed.ets.oregon.gov";
-
+    
+    /// <summary>
+    /// Gets the name of the VPN for the organization.
+    /// </summary>
+    /// <value>
+    /// The name of the VPN used for the connection.
+    /// </value>
+    public static string VpnName => "TODO";
     /// <summary>
     /// For Karen Payne only
     /// </summary>
@@ -57,7 +65,7 @@ internal class Information
     }
     public static string GetVpnInformation()
     {
-        string status = "OED VPN not initialize or undetectable";
+        string status = "VPN not initialize or undetectable";
 
         try
         {
@@ -82,6 +90,26 @@ internal class Information
 
     }
 
+    public static (VisualStudioInformation info, Exception localException) DevEnvDetails()
+    {
+        VisualStudioInformation information = new() { ProductVersion = new Version() };
+        try
+        {
+            var item = Process.GetProcessesByName("DevEnv")[0].Modules[0].FileVersionInfo;
+            information.FileVersion = item.FileVersion;
+            information.FileDescription = item.FileDescription;
 
+            if (Version.TryParse(item.ProductVersion, out var pv))
+            {
+                information.ProductVersion = pv;
+            }
+            return (information, null);
+        }
+        catch (Exception exception)
+        {
+            return (information, exception);
+
+        }
+    }
 
 }

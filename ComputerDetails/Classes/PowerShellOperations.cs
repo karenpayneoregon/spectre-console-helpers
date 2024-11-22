@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Text;
 using System.Text.Json;
-s;
+
 
 namespace ComputerDetails.Classes
 {
@@ -30,7 +30,10 @@ namespace ComputerDetails.Classes
 
                 foreach (var item in info)
                 {
-                    list.Add(new Version(item));
+                    if (Version.TryParse(item, out var result))
+                    {
+                        list.Add(result);
+                    }
                 }
 
                 return (true, list, null);
@@ -61,14 +64,14 @@ namespace ComputerDetails.Classes
                 process.EnableRaisingEvents = true;
 
                 var lineData = await reader.ReadToEndAsync();
-                var items = lineData.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+                var items = lineData.Split([Environment.NewLine], StringSplitOptions.RemoveEmptyEntries);
 
                 StringBuilder builder = new();
                 foreach (var item in items)
                 {
-                    if (item.Contains("["))
+                    if (item.Contains('['))
                     {
-                        builder.AppendLine("   " + item.Substring(0, item.IndexOf("[", StringComparison.Ordinal) - 1));
+                        builder.AppendLine("   " + item[..(item.IndexOf("[", StringComparison.Ordinal) - 1)]);
                     }
                 }
 
