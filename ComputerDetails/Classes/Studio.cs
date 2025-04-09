@@ -11,7 +11,7 @@ namespace ComputerDetails.Classes;
 /// </summary>
 /// <remarks>
 /// This class provides methods and properties to retrieve information about installed Visual Studio instances,
-/// leveraging tools `vswhere.exe` for querying details.
+/// leveraging tools vswhere.exe for querying details.
 /// </remarks>
 public class Studio
 {
