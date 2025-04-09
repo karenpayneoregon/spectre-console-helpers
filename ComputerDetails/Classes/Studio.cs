@@ -72,8 +72,8 @@ public class Studio
 
         var instances = JsonSerializer.Deserialize<VisualStudioInstance[]>(output, Options);
         return instances?
-            .OrderByDescending(i => Version.TryParse(i.Catalog?.ProductDisplayVersion, 
-                out var v) ? v : new Version(0, 0))
+            .OrderByDescending(vsi => 
+                Version.TryParse(vsi.Catalog?.ProductDisplayVersion, out var version) ? version : new Version(0, 0))
             .FirstOrDefault();
     }
 
