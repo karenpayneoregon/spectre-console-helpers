@@ -13,7 +13,11 @@ internal class Program
         //var list = NetworkInterface.GetAllNetworkInterfaces();
 
 
-        DevEnvDetails();
+        var demo = new RandomDateTime();
+        for (int index = 0; index < 10; index++)
+        {
+            Console.WriteLine(demo.Next());
+        }
         Console.ReadLine();
     }
 

@@ -8,8 +8,7 @@ namespace ComputerDetails
         [ModuleInitializer]
         public static void Init()
         {
-            AnsiConsole.MarkupLine($"[cyan1]Computer details[/] {DateTime.Now.Year}");
-            //AnsiConsole.MarkupLine($"By Karen Payne");
+            AnsiConsole.MarkupLine("[cyan1]Computer details[/]");
             Console.WriteLine();
         }
 

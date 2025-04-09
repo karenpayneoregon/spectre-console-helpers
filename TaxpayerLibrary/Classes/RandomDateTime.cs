@@ -5,9 +5,9 @@
     /// </summary>
     public class RandomDateTime
     {
-        DateTime start;
-        Random random;
-        int range;
+        private DateTime start;
+        private Random random;
+        private int range;
 
         public RandomDateTime()
         {

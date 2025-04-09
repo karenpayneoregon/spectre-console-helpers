@@ -5,12 +5,12 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
-		<ApplicationIcon>assets\OEDsmall.ico</ApplicationIcon>
+		<ApplicationIcon>assets\agent3.ico</ApplicationIcon>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>Computer details</Title>
 		<Description>Provides several details about the current computer</Description>
-		<Copyright>OED/Karen Payne (c) 2024s</Copyright>
-		<PackageIcon>OEDsmall.png</PackageIcon>
+		<Copyright>Karen Payne (c) 2025</Copyright>
+		<PackageIcon>agent3.png</PackageIcon>
 		<RepositoryUrl>https://github.com/OED-Applications/internal-utilities</RepositoryUrl>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackAsTool>True</PackAsTool>
@@ -26,7 +26,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Include="assets\OEDsmall.ico" />
+	  <Content Include="agent3.ico" />
+	  <Content Include="assets\agent3.ico" />
 	  <Content Include="readme.md" />
 	</ItemGroup>
 
@@ -66,17 +67,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Update="agent3.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	  <None Update="appsettings.json">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
-	  <None Update="assets\OEDsmall.png">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	  <None Update="OEDsmall.png">
-	    <PackagePath>\</PackagePath>
-	    <Pack>True</Pack>
-	  </None>
+
 	  <None Update="readme.md">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
