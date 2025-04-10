@@ -104,7 +104,7 @@ internal class Information
     {
         try
         {
-            foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
+            foreach (var ni in NetworkInterface.GetAllNetworkInterfaces())
             {
                 if (ni is { OperationalStatus: OperationalStatus.Up, NetworkInterfaceType: NetworkInterfaceType.Ppp }) // PPP often indicates VPN
                 {
@@ -113,7 +113,7 @@ internal class Information
                     string description = ni.Description.ToLower();
                     if (name.Contains("vpn") || name.Contains("_common_") || description.Contains("vpn"))
                     {
-                        return (true, name);
+                        return (true, ni.Name);
                     }
                 }
             }

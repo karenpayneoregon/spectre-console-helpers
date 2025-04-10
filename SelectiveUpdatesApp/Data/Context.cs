@@ -60,4 +60,5 @@ public partial class Context : DbContext
             .UseSqlServer(ConfigurationHelper.ConnectionString());
 
     }
+
 }

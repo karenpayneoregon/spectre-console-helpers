@@ -16,7 +16,7 @@ internal partial class Program
         while (await timer.WaitForNextTickAsync() && counter < 5)
         {
             counter++;
-            AnsiConsole.MarkupLine($"[cyan]Counter[/] [white]{counter}[/]");
+            AnsiConsole.Markup($"[cyan]Counter[/] [white]{counter}[/]");
 
         }
 
