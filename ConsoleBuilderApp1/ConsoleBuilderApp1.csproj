@@ -18,6 +18,7 @@
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="ConsoleHelperLibrary" Version="1.0.2" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.4" />
 		<PackageReference Include="PRI.CommandLineExtensions" Version="1.0.4" />
 	</ItemGroup>
 
@@ -27,17 +28,13 @@
 	<ItemGroup>
 		<PackageReference Include="Spectre.Console" Version="0.50.0" />
 	</ItemGroup>
-	<ItemGroup>
-	  <Reference Include="Microsoft.Extensions.Http">
-	    <HintPath>..\..\..\..\..\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref\6.0.36\ref\net6.0\Microsoft.Extensions.Http.dll</HintPath>
-	  </Reference>
-	</ItemGroup>
+
 	<ItemGroup>
 		<None Update="appsettings.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Stashed code\" />
+		<Folder Include="Stashed code\" />
 	</ItemGroup>
 </Project>

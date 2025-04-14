@@ -10,13 +10,19 @@ namespace SelectiveUpdatesApp
         [ModuleInitializer]
         public static void Init()
         {
-            AnsiConsole.MarkupLine("");
-            Console.Title = "Code sample";
+            Console.Title = "EF Core Code sample";
             WindowUtility.SetConsoleWindowPosition(WindowUtility.AnchorWindow.Center);
             CleanDatabase();
-            Populate();
-            AnsiConsole.MarkupLine("[yellow]Populated[/]");
         }
+
+        /// <summary>
+        /// Deletes the existing database and recreates it.
+        /// </summary>
+        /// <remarks>
+        /// This method ensures that the database is in a clean state by first deleting it
+        /// and then recreating it. It uses the <see cref="SelectiveUpdatesApp.Data.Context"/> class
+        /// to perform these operations.
+        /// </remarks>
         public static void CleanDatabase()
         {
             using var context = new Context();
@@ -24,13 +30,5 @@ namespace SelectiveUpdatesApp
             context.Database.EnsureCreated();
         }
 
-        private static void Populate()
-        {
-            using var context = new Context();
-            context.Add(new Person() {FirstName = "Jim", LastName = "Gallagher", Title = "Mr", BirthDate = new DateTime(1957,8,7)});
-            context.Add(new Person() {FirstName = "Maggie", LastName = "Gallagher", Title = "Mrs", BirthDate = new DateTime(1960,5,11)});
-            context.Add(new Person() {FirstName = "Billy", LastName = "Smith", Title = "Mr", BirthDate = new DateTime(1989,9,23)});
-            context.SaveChanges();
-        }
     }
 }

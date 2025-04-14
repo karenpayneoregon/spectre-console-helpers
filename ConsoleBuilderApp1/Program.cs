@@ -19,6 +19,7 @@ partial class Program(ILogger<Program> logger, HttpClient httpClient)
         });
         var program = builder.Build<Program>();
         await program.Run();
+        Console.ReadLine();
     }
 
     private async Task Run()
